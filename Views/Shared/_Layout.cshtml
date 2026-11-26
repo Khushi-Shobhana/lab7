@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title>@ViewBag.Title - Student Feedback</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        /* Header */
+
+        .header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+            .header h1 {
+                margin: 0;
+                font-size: 32px;
+            }
+
+        /* Navigation */
+
+        .navbar {
+            background-color: #333;
+            text-align: center;
+            padding: 15px;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                margin: 0 20px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+                .navbar a:hover {
+                    color: #ddd;
+                }
+
+        /* Main Content */
+
+        .container {
+            width: 85%;
+            max-width: 1100px;
+            margin: 35px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+            min-height: 450px;
+        }
+
+        /* Footer */
+
+        .footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 40px;
+        }
+
+            .footer p {
+                margin: 0;
+            }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <div class="header">
+        <h1>Student Feedback</h1>
+    </div>
+
+
+    <!-- Navigation -->
+
+    <div class="navbar">
+
+        @Html.ActionLink(
+            "Home",
+            "Index",
+            "Feedback"
+        )
+
+        @Html.ActionLink(
+            "Give Feedback",
+            "Create",
+            "Feedback"
+        )
+
+        @Html.ActionLink(
+            "View Feedback",
+            "ViewFeedback",
+            "Feedback"
+        )
+
+    </div>
+
+
+    <!-- Page Content -->
+
+    <div class="container">
+
+        @RenderBody()
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <div class="footer">
+
+        <p>
+            Student Feedback Management System
+        </p>
+
+    </div>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
